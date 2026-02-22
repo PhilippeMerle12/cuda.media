@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuda Media</title>
+
+<style>
+:root{
+  --bg:#061a26;
+  --bg2:#072635;
+  --ink:#eaf7ff;
+  --accent:#74f0ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
+  color:var(--ink);
+}
+a{color:inherit;text-decoration:none}
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(6,26,38,.7);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.nav{
+  max-width:1400px;margin:auto;
+  padding:18px 28px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.brand{display:flex;align-items:center;gap:20px}
+.brand img{
+  width:120px;height:120px;
+  border-radius:26px;
+  border:1px solid rgba(255,255,255,.2);
+}
+.btn{
+  padding:16px 30px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#0fb7c6,#74f0ff);
+  color:#021019;
+  font-weight:900;
+  font-size:16px;
+}
+
+/* HERO */
+.hero{
+  max-width:1400px;
+  margin:auto;
+  padding:90px 28px 80px;
+}
+.hero h1{
+  font-size:72px;
+  line-height:1.02;
+  margin:0;
+}
+.hero p{
+  margin-top:18px;
+  max-width:900px;
+  font-size:20px;
+  opacity:.85;
+}
+
+/* FULL WIDTH */
+.full{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  position:relative;
+  overflow:hidden;
+}
+.full video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* SHOWREEL */
+.showreel{
+  height:85vh;
+}
+.showreel .overlay{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:rgba(0,0,0,.55);
+}
+.showreel .overlay div{
+  max-width:900px;
+  padding:0 24px;
+}
+.showreel p{
+  font-size:28px;
+  line-height:1.4;
+  margin-bottom:40px;
+  font-weight:600;
+}
+
+/* SECTIONS */
+section{
+  max-width:1400px;
+  margin:auto;
+  padding:90px 28px;
+}
+section h2{
+  font-size:44px;
+  margin:0 0 20px;
+}
+section p{
+  max-width:900px;
+  font-size:18px;
+  line-height:1.6;
+  opacity:.85;
+}
+
+/* PROJEKTE */
+.clients{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  padding:28px;
+}
+.client{
+  position:relative;
+  height:460px;
+  border-radius:32px;
+  overflow:hidden;
+}
+.client video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.client .name{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:56px;
+  font-weight:900;
+  letter-spacing:-0.02em;
+  text-transform:uppercase;
+  background:rgba(0,0,0,.45);
+  color:white;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  background:#04131c;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.footer-inner{
+  max-width:1400px;
+  margin:auto;
+  padding:26px 28px;
+  font-size:14px;
+  opacity:.8;
+}
+.footer-inner button{
+  background:none;
+  border:none;
+  color:var(--accent);
+  font-weight:800;
+  cursor:pointer;
+}
+.impressum{
+  display:none;
+  margin-top:16px;
+  font-size:13px;
+  line-height:1.6;
+}
+.impressum.show{display:block}
+
+@media(max-width:900px){
+  .hero h1{font-size:46px}
+  .showreel p{font-size:22px}
+  .clients{grid-template-columns:1fr}
+  .client .name{font-size:36px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="assets/logo.png">
+      <strong>Cuda Media</strong>
+    </div>
+    <a class="btn" href="https://discord.gg/VwTkzjdA" target="_blank">Beitreten</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Wir bringen Kurzfilme<br>auf ein neues Level.</h1>
+  <p>
+    Cuda Media ist ein Collective für Menschen, die nicht nur zuschauen,
+    sondern mitmachen wollen.
+  </p>
+</div>
+
+<!-- SHOWREEL -->
+<div class="full showreel" id="showreel">
+  <video autoplay muted loop playsinline>
+    <source src="assets/media/showreel.mp4" type="video/mp4">
+  </video>
+  <div class="overlay">
+    <div>
+      <p>
+        wir haben gar kein showreel<br>
+        tritt einfach dem discord bei um zu sehen was wir machen
+      </p>
+      <a class="btn" href="https://discord.gg/VwTkzjdA" target="_blank">
+        discord beitreten
+      </a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <h2>Projekte</h2>
+</section>
+
+<div class="full">
+  <div class="clients">
+
+    <div class="client">
+      <video autoplay muted loop playsinline>
+        <source src="assets/media/porsche.mp4">
+      </video>
+      <div class="name">Porsche</div>
+    </div>
+
+    <div class="client">
+      <video autoplay muted loop playsinline>
+        <source src="assets/media/landrover.mp4">
+      </video>
+      <div class="name">Land Rover</div>
+    </div>
+
+    <div class="client">
+      <video autoplay muted loop playsinline>
+        <source src="assets/media/bts.mp4">
+      </video>
+      <div class="name">BTS</div>
+    </div>
+
+    <div class="client">
+      <video autoplay muted loop playsinline>
+        <source src="assets/media/international.mp4">
+      </video>
+      <div class="name">International</div>
+    </div>
+
+  </div>
+</div>
+
+<section>
+  <h2>Über uns</h2>
+  <p>
+    juckt eigentlich keinen wer wir sind<br>
+    schau einfach unser showreel
+  </p>
+  <a class="btn" href="#showreel">juckt fr nicht</a>
+</section>
+
+<section>
+  <h2>Teil des Teams werden</h2>
+  <p>
+    Du hast keine Vorerfahrung und willst trotzdem gerne dabei sein?
+    Kein Problem. Wir suchen Partner, die unsere Vision teilen,
+    lernen wollen und bereit sind alles zu geben – nicht perfekt
+    ausgebildete Mitarbeiter.
+  </p>
+  <a class="btn" href="https://discord.gg/VwTkzjdA" target="_blank">Jetzt beitreten</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    © Cuda Media ·
+    <button onclick="document.getElementById('imp').classList.toggle('show')">
+      Impressum
+    </button>
+    <div id="imp" class="impressum">
+      <strong>Angaben gemäß § 5 TMG</strong><br>
+      Cuda Media<br>
+      Taunusstraße 36<br>
+      65817 Eppstein<br>
+      Telefon: +49 176 53189484<br>
+      E-Mail: Philippe.merle@Cuda.Media
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
